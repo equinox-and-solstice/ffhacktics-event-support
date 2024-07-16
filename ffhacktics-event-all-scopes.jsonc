@@ -1,0 +1,492 @@
+{ // if you already have a settings.json file, remove this brace and the one at the end of the file
+    "editor.tokenColorCustomizations": { // if you already have this, remove this line and its match at the end
+        "textMateRules": [ // if you already have this, remove this line and its match at the end
+            // ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
+            // ---- EVT/Hacktics-specific scopes ---- ---- ----
+            // ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
+            {
+                "scope": "source.evt", // the foundational text coloring
+                "settings": {
+                    "foreground": "#dcdcdc" // Gainsboro
+                }
+            },
+            {
+                "scope": [ // general punctuation scopes
+                    "keyword.operator.assignment.evt", // :
+                    "punctuation.definition.evt", // ( ) { } //
+                    "punctuation.separator.evt" // ,
+                ],
+                "settings": {
+                    "foreground": "#dcdcdc", // Gainsboro
+                    "fontStyle": "bold"
+                }
+            },
+            // ---- Comments ---- ---- ---- ----
+            {
+                "scope": "comment.line.double-slash.evt", // the entire comment line
+                "settings": {
+                    "foreground": "#a9a9a9", // Dark Gray
+                    "fontStyle": "italic"
+                }
+            },
+            {
+                "scope": "punctuation.definition.evt.comment", // just the "//"
+                "settings": {
+                    "foreground": "#a9a9a9", // Dark Gray
+                    "fontStyle": "italic"
+                }
+            },
+            {
+                "scope": "comment.message.evt", // for comment text like "Message x0001"
+                "settings": {
+                    "foreground": "#66cd00" // Chartreuse 3
+                }
+            },
+            // ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
+            // ---- Numeric values ---- ---- ---- ----
+            {
+                "scope": "constant.numeric.prefix.evt",
+                "settings": {
+                    "foreground": "#66cd00", // Chartreuse 3
+                    "fontStyle": "bold"
+                }
+            },
+            // ---- Hex values ---- ---- ---- ----
+            {
+                "scope": "constant.numeric.evt.hex", // hex values like 0x00, $00, x00, and text formatter tags like font:08
+                "settings": {
+                    "foreground": "#eead0e" // Dark Goldenrod 2
+                }
+            },
+            // { // the first 0x, x, or $
+            //     "scope": "constant.numeric.prefix.evt.hex",
+            //     "settings": {
+            //         "foreground": "#66cd00" // Chartreuse 3
+            //     }
+            // },
+            { // the first 0 in 0x00 values
+                "scope": "constant.numeric.prefix.evt.hex.zero",
+                "settings": {
+                    "foreground": "#eead0e" // Dark Goldenrod 2
+                }
+            },
+            // { // the x or $
+            //     "scope": "constant.numeric.prefix.evt.hex.symbol",
+            //     "settings": {
+            //         "foreground": "#66cd00", // Chartreuse 3
+            //         "fontStyle": "bold"
+            //     }
+            // },
+            // { 
+            //     "scope": "constant.numeric.evt.hex.value",
+            //     "settings": {
+            //         "foreground": "#eead0e" // Dark Goldenrod 2
+            //     }
+            // },
+            // ---- Decimal values ---- ---- ---- ----
+            {
+                "scope": "constant.numeric.evt.decimal",
+                "settings": {
+                    "foreground": "#eead0e" // Dark Goldenrod 2
+                }
+            },
+            // {
+            //     "scope": "constant.numeric.prefix.evt.decimal",
+            //     "settings": {
+            //         "foreground": "#66cd00", // Chartreuse 3
+            //         "fontStyle": "bold"
+            //     }
+            // },
+            // {
+            //     "scope": "constant.numeric.evt.decimal.value",
+            //     "settings": {
+            //         "foreground": "#eead0e" // Dark Goldenrod 2
+            //     }
+            // },
+            // ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
+            // ---- Constants ---- ---- ---- ----
+            {
+                "scope": "variable.other.constant.evt",
+                "settings": {
+                    "foreground": "#ab82ff", // Medium Purple 1
+                    "fontStyle": "bold italic"
+                }
+            },
+            {
+                "scope": "constant.other.prefix.evt",
+                "settings": {
+                    "foreground": "#66cd00", // Chartreuse 3
+                    "fontStyle": "bold italic"
+                }
+            },
+            // {
+            //     "scope": "variable.other.constant.evt.value",
+            //     "settings": {
+            //         "foreground": "#ab82ff", // Medium Purple 1
+            //         "fontStyle": "bold italic"
+            //     }
+            // },
+            // ---- Const block and assignments ---- ---- ---- ----
+            {
+                "scope": "constant.declaration.evt.block",
+                "settings": {
+                    "foreground": "#ab82ff", // Medium Purple 1
+                    "fontStyle": "bold"
+                }
+            },
+            {
+                "scope": "punctuation.definition.evt.constant.block", // # for both lines like  #Const Start/End
+                "settings": {
+                    "foreground": "#f08080" // Light Coral
+                }
+            },
+            // {
+            //     "scope": "punctuation.definition.evt.constant.block.start",
+            //     "settings": {
+            //         "foreground": "#f08080" // Light Coral
+            //     }
+            // },
+            {
+                "scope": "punctuation.definition.evt.constant.block.end",
+                "settings": {
+                    // "foreground": "#f08080", // Light Coral
+                    "fontStyle": "italic"
+                }
+            },
+            // {
+            //     "scope": "constant.declaration.evt.block.statement", // the "Const Start/End" part
+            //     "settings": {
+            //         "foreground": "#ab82ff", // Medium Purple 1
+            //         "fontStyle": "italic"
+            //     }
+            // },
+            {
+                "scope": "variable.other.constant.evt.block", // an entire constant declaration within the block
+                "settings": {
+                    "foreground": "#66cd00", // Chartreuse 3
+                    "fontStyle": "italic"
+                }
+            },
+            {
+                "scope": "variable.other.constant.evt.block.name", // just the constant name
+                "settings": {
+                    "foreground": "#66cd00", // Chartreuse 3
+                    "fontStyle": "italic"
+                }
+            },
+            {
+                "scope": "keyword.operator.assignment.evt.constant.block", // the colon after the constant name
+                "settings": {
+                    "foreground": "#ab82ff", // Medium Purple 1
+                    "fontStyle": "italic bold"
+                }
+            },
+            {
+                "scope": "punctuation.separator.evt.constant.block",
+                "settings": {
+                    "foreground": "#ab82ff" // Medium Purple 1
+                }
+            },
+            // ---- Message constant assignments ---- ---- ---- ----
+            // {
+            //     "scope": "constant.declaration.evt.message", // an entire constant declaration above a message
+            //     "settings": {
+            //         "foreground": "#66cd00", // Chartreuse 3
+            //         "fontStyle": "bold italic"
+            //     }
+            // },
+            {
+                "scope": "constant.other.prefix.evt.message",
+                "settings": {
+                    "foreground": "#ab82ff" // Medium Purple 1
+                }
+            },
+            {
+                "scope": "variable.other.constant.evt.message.name",
+                "settings": {
+                    "foreground": "#66cd00", // Chartreuse 3
+                    "fontStyle": "bold italic"
+                }
+            },
+            {
+                "scope": "keyword.operator.assignment.evt.constant.message",
+                "settings": {
+                    "foreground": "#ab82ff", // Medium Purple 1
+                    "fontStyle": "bold italic"
+                }
+            },
+            // ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
+            // ---- Event instructions ---- ---- ----
+            // {
+            //     "scope": "entity.name.function.evt",
+            //     "settings": {
+            //         "foreground": "#48d1cc" // Medium Turquoise
+            //     }
+            // },
+            {
+                "scope": "punctuation.definition.parameters.evt",
+                "settings": {
+                    "foreground": "#dcdcdc", // Gainsboro
+                    "fontStyle": "bold"
+                }
+            },
+            // {
+            //     "scope": "punctuation.separator.parameter.evt",
+            //     "settings": {
+            //         "foreground": "#fff", // White
+            //         "fontStyle": "bold"
+            //     }
+            // },
+            // ---- Key/special instructions ---- ---- ---- ----
+            // {
+            //     "scope": "meta.function-call.key.evt",
+            //     "settings": {
+            //         "fontStyle": ""
+            //     }
+            // },
+            {
+                "scope": "entity.name.function.evt.key",
+                "settings": {
+                    "foreground": "#f08080" // Light Coral
+                }
+            },
+            // {
+            //     "scope": "punctuation.definition.parameters.evt.key",
+            //     "settings": {
+            //         "foreground": "#f08080", // Light Coral
+            //         "fontStyle": "bold"
+            //     }
+            // },
+            // ---- Variable/memory-related instructions ---- ---- ---- ----
+            // {
+            //     "scope": "meta.function-call.variable.evt",
+            //     "settings": {
+            //         "fontStyle": ""
+            //     }
+            // },
+            {
+                "scope": "entity.name.function.evt.variable",
+                "settings": {
+                    "foreground": "#FF8C00" // DarkOrange
+                }
+            },
+            // {
+            //     "scope": "punctuation.definition.parameters.evt.variable",
+            //     "settings": {
+            //         "foreground": "#66cd00", // Chartreuse 3
+            //         "fontStyle": ""
+            //     }
+            // },
+            // ---- Control instructions ---- ---- ---- ----
+            // { // For control instructions in general
+            //     "scope": "meta.function-call.control.evt",
+            //     "settings": {
+            //         "fontStyle": "underline"
+            //     }
+            // },
+            {
+                "scope": "meta.function-call.control.evt.start",
+                "settings": {
+                    "fontStyle": "underline"
+                }
+            },
+            {
+                "scope": "meta.function-call.control.evt.end",
+                "settings": {
+                    "fontStyle": "italic underline"
+                }
+            },
+            { // For control instructions in general
+                "scope": "entity.name.function.evt.control",
+                "settings": {
+                    "foreground": "#ab82ff" // Medium Purple 1
+                }
+            },
+            // {
+            //     "scope": "entity.name.function.evt.control.start",
+            //     "settings": {
+            //         "foreground": "#ab82ff" // Medium Purple 1
+            //     }
+            // },
+            // {
+            //     "scope": "entity.name.function.evt.control.end",
+            //     "settings": {
+            //         "foreground": "#ab82ff" // Medium Purple 1
+            //     }
+            // },
+            // { // For control instructions in general
+            //     "scope": "punctuation.definition.parameters.evt.control",
+            //     "settings": {
+            //         "foreground": "#ab82ff", // Medium Purple 1
+            //         "fontStyle": "underline"
+            //     }
+            // },
+            // {
+            //     "scope": "punctuation.definition.parameters.evt.control.start",
+            //     "settings": {
+            //         "foreground": "#ab82ff", // Medium Purple 1
+            //         "fontStyle": "underline"
+            //     }
+            // },
+            // {
+            //     "scope": "punctuation.definition.parameters.evt.control.end",
+            //     "settings": {
+            //         "foreground": "#ab82ff", // Medium Purple 1
+            //         "fontStyle": "italic underline"
+            //     }
+            // },
+            // ---- Block instructions ---- ---- ---- ----
+            // { // For block instructions in general
+            //     "scope": "meta.function-call.block.evt",
+            //     "settings": {
+            //         "fontStyle": ""
+            //     }
+            // },
+            // {
+            //     "scope": "meta.function-call.block.evt.start",
+            //     "settings": {
+            //         "fontStyle": ""
+            //     }
+            // },
+            {
+                "scope": "meta.function-call.block.evt.end",
+                "settings": {
+                    "fontStyle": "italic"
+                }
+            },
+            { // For block instructions in general
+                "scope": "entity.name.function.evt.block",
+                "settings": {
+                    "foreground": "#ab82ff" // Medium Purple 1
+                }
+            },
+            // {
+            //     "scope": "entity.name.function.evt.block.start",
+            //     "settings": {
+            //         "foreground": "#ab82ff" // Medium Purple 1
+            //     }
+            // },
+            // {
+            //     "scope": "entity.name.function.evt.block.end",
+            //     "settings": {
+            //         "foreground": "#ab82ff" // Medium Purple 1
+            //     }
+            // },
+            // { // For block instructions in general
+            //     "scope": "punctuation.definition.parameters.evt.block",
+            //     "settings": {
+            //         "foreground": "#ab82ff" // Medium Purple 1
+            //     }
+            // },
+            // {
+            //     "scope": "punctuation.definition.parameters.evt.block.start",
+            //     "settings": {
+            //         "foreground": "#ab82ff" // Medium Purple 1
+            //     }
+            // },
+            // {
+            //     "scope": "punctuation.definition.parameters.evt.block.end",
+            //     "settings": {
+            //         "foreground": "#ab82ff" // Medium Purple 1
+            //     }
+            // },
+            // ---- Named instructions ---- ---- ---- ----
+            // {
+            //     "scope": "meta.function-call.named.evt",
+            //     "settings": {
+            //         "fontStyle": ""
+            //     }
+            // },
+            {
+                "scope": "entity.name.function.evt.named",
+                "settings": {
+                    "foreground": "#48d1cc" // Medium Turquoise
+                }
+            },
+            // {
+            //     "scope": "punctuation.definition.parameters.evt.named",
+            //     "settings": {
+            //         "foreground": "#48d1cc" // Medium Turquoise
+            //     }
+            // },
+            // ---- Number-identified instructions ---- ---- ---- ----
+            // {
+            //     "scope": "meta.function-call.numbered.evt",
+            //     "settings": {
+            //         "fontStyle": ""
+            //     }
+            // },
+            {
+                "scope": "punctuation.definition.evt.function.numbered",
+                "settings": {
+                    "foreground": "#ee00ee" // Magenta 2
+                }
+            },
+            {
+                "scope": "entity.name.function.evt.numbered",
+                "settings": {
+                    "foreground": "#eead0e", // Dark Goldenrod 2
+                    "fontStyle": "italic"
+                }
+            },
+            {
+                "scope": "punctuation.definition.parameters.evt.numbered",
+                "settings": {
+                    "foreground": "#ee00ee" // Magenta 2
+                }
+            },
+            {
+                "scope": "constant.numeric.evt.unknown",
+                "settings": {
+                    "foreground": "#eead0e" // Dark Goldenrod 2
+                }
+            },
+            {
+                "scope": "constant.numeric.prefix.evt.unknown",
+                "settings": {
+                    "foreground": "#66cd00", // Chartreuse 3
+                    "fontStyle": "bold"
+                }
+            },
+            // {
+            //     "scope": "constant.numeric.evt.unknown.value",
+            //     "settings": {
+            //         "foreground": "#eead0e" // Dark Goldenrod 2
+            //     }
+            // },
+            // ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
+            // ---- Text formatters ---- ---- ----
+            // {
+            //     "scope": "meta.formatter.evt.text",
+            //     "settings": {
+            //         "fontStyle": ""
+            //     }
+            // },
+            {
+                "scope": "punctuation.definition.evt.formatter.text",
+                "settings": {
+                    "foreground": "#f08080" // Light Coral
+                }
+            },
+            // ---- Text formatter types ---- ---- ----
+            {
+                "scope": "entity.name.function.evt.formatter.text",
+                "settings": {
+                    "foreground": "#f08080" // Light Coral
+                }
+            },
+            {
+                "scope": "entity.name.function.evt.formatter.text.parameterized",
+                "settings": {
+                    "foreground": "#f08080" // Light Coral
+                }
+            }
+            // {
+            //     "scope": "entity.name.function.evt.formatter.text.parameterized.inline",
+            //     "settings": {
+            //         "foreground": "#f08080" // Light Coral
+            //     }
+            // },
+        ] // "textMateRules" ending line
+    } // "editor.tokenColorCustomizations" ending line
+} // settings.json file ending line
