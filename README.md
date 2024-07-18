@@ -1,13 +1,21 @@
-# Overview
+## Overview
 
 This is an unofficial extension for hacking Final Fantasy Tactics, specifically event scripting. It builds on the content provided by the [FFHacktics community](https://ffhacktics.com/) and as such refers to all such content in the event instruction data (including linking to the [wiki](https://ffhacktics.com/wiki/Main_Page)).
 
 [![License: CC BY-NC 4.0](https://img.shields.io/badge/License-CC%20BY--NC%204.0-lightgrey.svg)](http://creativecommons.org/licenses/by-nc/4.0/)
 Share it and don't sell it...
 
+Find tutorials at ... ***
+
 Enjoy and happy hacking 😁
 
-**Features and tutorials**
+### Problems / bugs / issues, requests etc
+
+Please log these in the [GitHub issue tracker](https://github.com/equinox-and-solstice/ffhacktics-event-support/issues).
+
+See also the list of features I've come up with for the future in the [change log](CHANGELOG.md).
+
+### Features and tutorials
 
 As long as your open event file's extension is `.evt` (such as `event.evt`):
 
@@ -15,7 +23,19 @@ As long as your open event file's extension is `.evt` (such as `event.evt`):
   - **Tutorial**: [crash course video](https://www.youtube.com/watch?v=btLANdB91fg); includes extension installation
   - Event instruction info displaying [![Requires Event Instruction Upgrade - click for Wiki page](icon/EIU_icon.png)](https://ffhacktics.com/wiki/Event_Instruction_Upgrade) indicates the event instruction requires the Event Instruction Upgrade; click the icon where shown to link to the wiki page for details, including where to download
 - Code snippets (see below)
-- Syntax highlighting (see below for formatting scopes) and language support
+- Syntax highlighting and language support
+
+---
+
+## Support / Donations
+
+If my work helps you, and you would like to thank me for the time I spent developing it, please consider supporting me on [Ko-fi](https://ko-fi.com/nikomarble) or [Buy Me a Coffee](https://buymeacoffee.com/nikodaemus) 🙏
+
+[![Support me on Ko-fi](icon\kofi_button_blue_half.png)](https://ko-fi.com/nikomarble)
+
+[![Buy Me a Coffee](https://www.buymeacoffee.com/assets/img/custom_images/yellow_img.png)](https://buymeacoffee.com/nikodaemus)
+
+No expectations, only gratitude 🙏
 
 ---
 
@@ -57,7 +77,7 @@ The short answer is that in your `settings.json` file, you set formatting for a 
 
 Though the defaults list each item individually for control, you can also combine multiple scopes for convenience. See the following example for formatting both event script comments and number prefixes as dark gray lettering and italics:
 
-```json
+```jsonc
 "editor.tokenColorCustomizations": {
     "textMateRules": [
         {
